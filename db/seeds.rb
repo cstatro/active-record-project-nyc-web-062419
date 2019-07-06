@@ -1,0 +1,27 @@
+ a1 = Author.create(name:"Ernest Hemingway")
+ a2 = Author.create(name:"RL Stine")
+ a3 = Author.create(name:"Raymond Chandler")
+ a4 = Author.create(name:"Alexander Dumas")
+ a5 = Author.create(name:"Leo Tolstoy")
+ a6 = Author.create(name:"George RR Martin")
+ a7 = Author.create(name:"JRR Tolkien")
+
+ c1 = Category.create(name: "Classic Fiction")
+ c2 = Category.create(name: "Young Adult")
+ c3 = Category.create(name: "Mystery")
+ c4 = Category.create(name: "Romance")
+ c5 = Category.create(name: "Fantasy")
+ c6 = Category.create(name: "Memoir")
+
+ b1 = Book.create(name:"A Farewell to Arms", author: a1,category: c1)
+ b1 = Book.create(name:"A Moveable Feast", author: a1,category: c6)
+ b2 = Book.create(name:"Say Cheese and Die", author: a2,category: c2)
+ b2 = Book.create(name:"Night of the Living Dummy", author: a2,category: c2)
+ b3 = Book.create(name:"Farewell My Lovely", author: a3,category: c3)
+ b4 = Book.create(name:"The Long Goodbye", author: a3,category: c3)
+ b5 = Book.create(name:"Anna Karina", author: a5,category: c4)
+ b6 = Book.create(name:"War and Peace", author: a5,category: c1)
+ b7 = Book.create(name:"The Count of Monte Cristo", author: a4,category: c1)
+ b8 = Book.create(name:"The Lord of the Rings", author: a7,category: c5)
+ 
+ 
