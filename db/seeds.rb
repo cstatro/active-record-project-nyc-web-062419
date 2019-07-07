@@ -24,6 +24,8 @@
  b9 = Book.create(name:"The Count of Monte Cristo", author: a4,category: c1)
  b10 = Book.create(name:"The Lord of the Rings", author: a7,category: c5)
  b11 = Book.create(name:"The Hobbit", author: a7,category: c5)
+ b12 = Book.create(name:"Game of Thrones", author: a6,category: c5)
+ b13 = Book.create(name:"A Clash of Kings", author: a6,category: c5)
 
  u1 = User.create(name:"Colin")
  u2 = User.create(name:"Boboo")
