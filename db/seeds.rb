@@ -14,14 +14,23 @@
  c6 = Category.create(name: "Memoir")
 
  b1 = Book.create(name:"A Farewell to Arms", author: a1,category: c1)
- b1 = Book.create(name:"A Moveable Feast", author: a1,category: c6)
- b2 = Book.create(name:"Say Cheese and Die", author: a2,category: c2)
- b2 = Book.create(name:"Night of the Living Dummy", author: a2,category: c2)
- b3 = Book.create(name:"Farewell My Lovely", author: a3,category: c3)
- b4 = Book.create(name:"The Long Goodbye", author: a3,category: c3)
- b5 = Book.create(name:"Anna Karina", author: a5,category: c4)
- b6 = Book.create(name:"War and Peace", author: a5,category: c1)
- b7 = Book.create(name:"The Count of Monte Cristo", author: a4,category: c1)
- b8 = Book.create(name:"The Lord of the Rings", author: a7,category: c5)
+ b2 = Book.create(name:"A Moveable Feast", author: a1,category: c6)
+ b3 = Book.create(name:"Say Cheese and Die", author: a2,category: c2)
+ b4 = Book.create(name:"Night of the Living Dummy", author: a2,category: c2)
+ b5 = Book.create(name:"Farewell My Lovely", author: a3,category: c3)
+ b6 = Book.create(name:"The Long Goodbye", author: a3,category: c3)
+ b7 = Book.create(name:"Anna Karina", author: a5,category: c4)
+ b8 = Book.create(name:"War and Peace", author: a5,category: c1)
+ b9 = Book.create(name:"The Count of Monte Cristo", author: a4,category: c1)
+ b10 = Book.create(name:"The Lord of the Rings", author: a7,category: c5)
+ b11 = Book.create(name:"The Hobbit", author: a7,category: c5)
+
+ u1 = User.create(name:"Colin")
+ u2 = User.create(name:"Boboo")
+ u3 = User.create(name:"Angel")
+ u4 = User.create(name:"Chad")
+ u5= User.create(name:"Stacy")
+
+ u1.check_out(b1)
  
  
