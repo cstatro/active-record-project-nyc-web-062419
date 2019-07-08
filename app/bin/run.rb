@@ -7,8 +7,15 @@ class Session
     def toggle_login
         if !logged_in
             @logged_in = greet_user
+            main_menu
         else
-            logged_in = nil
+            self.logged_in = nil
         end
+    end
+    def main_menu
+        display_main_options
+        input = STDIN.gets.chomp
+        print_line
+        handle_main_menu_input(input,self)
     end
 end
