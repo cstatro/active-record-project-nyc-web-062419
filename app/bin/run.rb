@@ -1,6 +1,7 @@
 class Session 
     attr_accessor :logged_in,:view
     def initialize
+        @view = Book.order(name: :asc)
         puts "Hello welcome to the Library!"
         toggle_login
     end
@@ -9,6 +10,7 @@ class Session
             @logged_in = greet_user
             main_menu
         else
+            self.view = nil
             self.logged_in = nil
         end
     end

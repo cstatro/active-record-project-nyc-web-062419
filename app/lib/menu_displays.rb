@@ -1,7 +1,15 @@
+####### GENERAL PURPOSE
+def print_line
+    puts "--------------------------------------"
+end
 
 def print_titles(arg= Book.order(name: :asc))
     arg.pluck(:name).each_with_index {|book,i| puts "#{i+1}. #{book}"}
 end
+
+
+
+######## MAIN MENU
 
 def display_main_options
     puts "Please choose an option from below:"
@@ -10,6 +18,8 @@ def display_main_options
     puts "3. Logout"
 end
 
+    ######## MAIN MENU - SUB1
+
 def display_sub_options_one
     puts "What would you like to do?"
     puts "1. Checkout Book"
@@ -17,6 +27,17 @@ def display_sub_options_one
     puts "3. Back to Main Menu"
     puts "Enter Choice:"
 end
-def print_line
-    puts "--------------------------------------"
+
+        ####### MAIN MENU - SUB1-1
+
+def subone_one
+    puts "Please select book from the list"
 end
+
+    ####### MAIN MENU - SUB2
+def display_sub_two
+    puts "1. View Checked Out Books"
+    puts "2. Return All Books"
+    puts "3. Back to Main Menu"
+end
+

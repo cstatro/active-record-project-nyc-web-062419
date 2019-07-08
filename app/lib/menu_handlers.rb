@@ -1,15 +1,4 @@
-
-def book_available?(title)
-    Book.find_by(name: title,status: "in_stock")
-end
-
-def next_available(title)
-    ###sort by return date and find the one closest to current time. 
-end
-
-def print_titles(arg= Book.order(name: :asc))
-    arg.pluck(:name).each_with_index {|book,i| puts "#{i+1}. #{book}"}
-end
+####### SIGN IN
 
 def greet_user
     puts "Please Enter Name:"
@@ -28,17 +17,20 @@ def greet_user
     end
 end
 
-
+####### MAIN MENU
 
 def handle_main_menu_input(input,session)  
     case(input.to_i)
     when 1
-        print_titles
+        print_titles(session.view)
         print_line
         display_sub_options_one
         handle_sub_options_one(session)
     when 2
-       puts "BOTTOM TEXT"
+        display_sub_two
+        print_line
+        handle_sub_two(session)
+        
     when 3
         puts "Goodbye! Please comeback soon!"
         session.toggle_login
@@ -48,11 +40,15 @@ def handle_main_menu_input(input,session)
     end
 end
 
+    ####### HANDLE MAIN MENU - SUB1
+
 def handle_sub_options_one(session)
     input = STDIN.gets.chomp
+    print_line
     case(input.to_i)
     when 1
-        puts "NOT IMPLEMENTED CHECKOUT"
+        subone_one
+        handle_sub_one_one(session)
     when 2
         puts "NOT IMPLEMENTED CATEGORY"
     when 3
@@ -62,6 +58,42 @@ def handle_sub_options_one(session)
         handle_sub_options_one(session)
     end
 end
+
+       ####### MAIN MENU - SUB1-1
+def handle_sub_one_one(session)
+    input = STDIN.gets.chomp 
+    session.logged_in.check_out(session.view[input.to_i-1])
+    puts "Going Back To Main Menu"
+    session.main_menu
+end
+
+    ####### HANDLE MAIN MENU - SUB2
+def handle_sub_two(session)
+    input = STDIN.gets.chomp
+    case(input.to_i)
+    when 1
+        print_titles(session.logged_in.books_out)
+        print_line
+        handle_sub_two_one(session)
+    when 2
+        puts "Need Handler"
+    when 3
+        session.main_menu
+    end
+end
+        ####### HANDLE MAIN MENU - SUB2-1
+def handle_sub_two_one(session)
+    puts "What will you return?"
+    input = STDIN.gets.chomp
+    session.logged_in.check_in(session.logged_in.books_out[input-1])
+    puts "Thank you!"
+    print_line
+    session.main_menu
+end
+
+
+
+
 
 
         

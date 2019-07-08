@@ -23,5 +23,9 @@ class User < ActiveRecord::Base
     def fees_paid
         CheckOut.where(user: self).pluck(:late_fee).compact.sum
     end
+    def books_out
+        # CheckOut.where(user: self,returned: nil).pluck(:book)
+        CheckOut.where(user: self,returned: nil).map {|x| x.book}
+    end
            
 end
