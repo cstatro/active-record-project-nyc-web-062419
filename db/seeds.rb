@@ -34,5 +34,8 @@
  u5= User.create(name:"Stacy")
 
  u1.check_out(b1)
+ u1.check_in(b1,Clock.days_forward(9))
+ u1.check_out(b2)
+ u1.check_in(b2,Clock.days_forward(8))
  
  

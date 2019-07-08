@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2019_07_06_212652) do
     t.datetime "check_out_time"
     t.datetime "due"
     t.datetime "returned"
-    t.integer "late_fee"
+    t.float "late_fee"
   end
 
   create_table "users", force: :cascade do |t|

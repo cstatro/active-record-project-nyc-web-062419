@@ -1,8 +1,8 @@
 signed_in_user = nil
 
 
-def find_available(title)
-    ###find an available book that's checked in
+def book_available?(title)
+    Book.find_by(name: title,status: "in_stock")
 end
 
 def next_available(title)
@@ -28,5 +28,6 @@ def greet_user
         ## list menu options
     end
 end
+
 
         

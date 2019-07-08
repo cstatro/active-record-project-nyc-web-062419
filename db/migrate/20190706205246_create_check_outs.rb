@@ -6,7 +6,7 @@ class CreateCheckOuts < ActiveRecord::Migration[5.2]
       t.datetime :check_out_time
       t.datetime :due
       t.datetime :returned
-      t.integer :late_fee
+      t.float :late_fee
     end
   end
 end
